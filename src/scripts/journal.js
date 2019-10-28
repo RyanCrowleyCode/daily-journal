@@ -5,4 +5,4 @@
     Change the fake variable names below to what they should be
     to get the data and display it.
 */
-API.getEntries().then(entries => renderJournalEntries(entries))
+API.getEntries().then(entries => DomBuilder.renderJournalEntries(entries))

@@ -2,9 +2,11 @@
 const domJournalContainer = document.querySelector(".entryLog")
 
 // This function iterates through my array of journal entries and adds them to the DOM.
-const renderJournalEntries = (entries) => {
+const DomBuilder = {
+    renderJournalEntries: (entries) => {
     entries.forEach(entry => {
-        const addEntry = makeJournalEntryComponent(entry)
+        const addEntry = JournalEntryComponent.makeJournalEntryComponent(entry)
         domJournalContainer.innerHTML += addEntry
     }
     )}
+}
