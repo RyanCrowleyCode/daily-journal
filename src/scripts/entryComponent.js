@@ -1,5 +1,6 @@
 // This function takes a journalEntry object and returns a string template that represents a single journal entry object as HTML.
-const makeJournalEntryComponent = (journalEntry) => {
+const JournalEntryComponent = {
+    makeJournalEntryComponent: (journalEntry) => {
     return `
         <section class="journal-entry">
             <h2 class="journal-title">${journalEntry.title}</h2>
@@ -9,4 +10,5 @@ const makeJournalEntryComponent = (journalEntry) => {
         </section>
 
     `
+    }
 }
