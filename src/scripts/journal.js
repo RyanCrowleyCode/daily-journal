@@ -23,9 +23,15 @@ recButton.addEventListener("click", () => {
     const mood = document.querySelector("#mood")
     // variable to get the actual text inside the mood, not just the value, like "Great!"
     const moodText = mood.options[mood.selectedIndex].text
-
-    const newestEntry = NewJournal.createJournalObject(date.value, concepts.value, entry.value, moodText)
-    API.saveJournalEntry(newestEntry)
+    if (date.value, concepts.value, entry.value, mood.value) { 
+        const newestEntry = NewJournal.createJournalObject(date.value, concepts.value, entry.value, moodText)
+        API.saveJournalEntry(newestEntry)
+    }
 })
 
 
+// Challenge: Advanced Form Validation
+// Add the following validation code to your journal entry form fields.
+
+// Pick a maximum length for concepts field and provide visual feedback (e.g. alert box, or putting text in a blank div) if you type in a string that is longer than that maximum.
+// Test that the concept and entry fields contain no curse words. You can use regular expressions for that.
