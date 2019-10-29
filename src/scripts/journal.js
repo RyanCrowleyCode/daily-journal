@@ -3,15 +3,13 @@ import DomBuilder from "./entriesDOM.js"
 import NewJournal from "./journalObject.js"
 
 
-/*
-    Main application logic that uses the functions and objects
-    defined in the other JavaScript files.
+// Function for every time we need to get all of the journal entries and render them to the DOM
+const getAndRender = () => {
+    API.getEntries().then(entries => DomBuilder.renderJournalEntries(entries))
+}
 
-    Change the fake variable names below to what they should be
-    to get the data and display it.
-*/
-API.getEntries().then(entries => DomBuilder.renderJournalEntries(entries))
-
+// Calling that function to get all of the journal entries and render them to the DOM
+getAndRender()
 
 // targeting the record button
 const recButton = document.querySelector("#recordButton")
@@ -25,7 +23,8 @@ recButton.addEventListener("click", () => {
     const mood = document.querySelector("#mood")
 
     const newestEntry = NewJournal.createJournalObject(date.value, concepts.value, entry.value, mood.value)
-    
+    API.saveJournalEntry(newestEntry)
+    .then(getAndRender())
 })
 
 
