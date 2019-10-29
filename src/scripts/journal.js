@@ -33,7 +33,6 @@ recButton.addEventListener("click", () => {
 
 
 // Basic Input Validation
-// Using required attribute to ensure no blank entries
 // No characters other than letters, numbers, (), {}, :, and ;
 
 // Journal Entry Factory Function
