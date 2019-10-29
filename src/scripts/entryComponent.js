@@ -12,3 +12,5 @@ const JournalEntryComponent = {
     `
     }
 }
+
+export default JournalEntryComponent
