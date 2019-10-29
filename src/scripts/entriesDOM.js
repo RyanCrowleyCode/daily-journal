@@ -1,3 +1,5 @@
+import JournalEntryComponent from "./entryComponent.js"
+
 // a reference to the article tag that will contain my journal entries on the DOM
 const domJournalContainer = document.querySelector(".entryLog")
 
@@ -10,3 +12,5 @@ const DomBuilder = {
     }
     )}
 }
+
+export default DomBuilder
