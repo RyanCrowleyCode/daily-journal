@@ -32,8 +32,5 @@ recButton.addEventListener("click", () => {
 })
 
 
-// Basic Input Validation
-// No characters other than letters, numbers, (), {}, :, and ;
-
 // Journal Entry Factory Function
 // Define a factory function whose responsibility is to generate an object that represents a journal entry.
