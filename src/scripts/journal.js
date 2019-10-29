@@ -1,5 +1,6 @@
 import API from "./data.js"
 import DomBuilder from "./entriesDOM.js"
+import NewJournal from "./journalObject.js"
 
 
 /*
@@ -23,14 +24,13 @@ recButton.addEventListener("click", () => {
     const entry = document.querySelector("#journalEntry")
     const mood = document.querySelector("#mood")
 
-
-    // console.log("date: ", date.required)
-    // console.log("concepts: ", concepts.required)
-    // console.log("entry: ", entry.required)
-    // console.log("mood: ", mood.required)
-
+    const newestEntry = NewJournal.createJournalObject(date.value, concepts.value, entry.value, mood.value)
+    
 })
 
 
-// Journal Entry Factory Function
-// Define a factory function whose responsibility is to generate an object that represents a journal entry.
+// AT THIS PART NOW
+// In main module, invoke method to save entry (API.saveJournalEntry(newEntry)), then add item to local array.
+// Update DOM with updated array values.
+// post.then(get).then(render)
+
