@@ -12,7 +12,7 @@ const API = {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(journalEntryObject)
-    })
+    }).then(response => response.json())
     }
 }
 

@@ -21,15 +21,11 @@ recButton.addEventListener("click", () => {
     const concepts = document.querySelector("#concepts")
     const entry = document.querySelector("#journalEntry")
     const mood = document.querySelector("#mood")
+    // variable to get the actual text inside the mood, not just the value, like "Great!"
+    const moodText = mood.options[mood.selectedIndex].text
 
-    const newestEntry = NewJournal.createJournalObject(date.value, concepts.value, entry.value, mood.value)
+    const newestEntry = NewJournal.createJournalObject(date.value, concepts.value, entry.value, moodText)
     API.saveJournalEntry(newestEntry)
-    .then(getAndRender())
 })
 
-
-// AT THIS PART NOW
-// In main module, invoke method to save entry (API.saveJournalEntry(newEntry)), then add item to local array.
-// Update DOM with updated array values.
-// post.then(get).then(render)
 
