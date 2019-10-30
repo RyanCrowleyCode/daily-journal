@@ -18,6 +18,12 @@ const VerifyText = {
                 messageDiv.className = ""
             }
         } )
+    },
+    watchForProfanity: function (inputField) {
+        // Test that the concept and entry fields contain no curse words. You can use regular expressions for that.
+        // regex expression
+        // empty div below concepts field and content field.
+
     }
 }
 
