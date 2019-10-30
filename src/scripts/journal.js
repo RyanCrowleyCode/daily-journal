@@ -27,6 +27,7 @@ recButton.addEventListener("click", () => {
     // variable to get the actual text inside the mood, not just the value, like "Great!"
     const moodText = mood.options[mood.selectedIndex].text
     
+    const inputFieldArray = [date, concepts, entry, mood]
 
 
     // checking to make sure all forms are filled out before posting to database
@@ -36,8 +37,11 @@ recButton.addEventListener("click", () => {
             // Posting to API
             const newestEntry = NewJournal.createJournalObject(date.value, concepts.value, entry.value, moodText)
             API.saveJournalEntry(newestEntry)
-        }   else {
-            console.log("NO!")
+                .then(getAndRender)
+            // for loop to clear inputFields
+            inputFieldArray.forEach(inputField => {
+                inputField.value = ""
+            })
         }
     }
 })
