@@ -4,3 +4,11 @@
     border: 2px solid rgb(92, 128, 75);
     border-radius: 5px;
 }
+
+.red-text {
+    color: red;
+}
+
+.yellow-text {
+    color: yellow;
+}

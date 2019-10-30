@@ -13,6 +13,7 @@ getAndRender()
 
 
 
+
 // targeting the record button
 const recButton = document.querySelector("#recordButton")
 
@@ -25,6 +26,8 @@ recButton.addEventListener("click", () => {
     const mood = document.querySelector("#mood")
     // variable to get the actual text inside the mood, not just the value, like "Great!"
     const moodText = mood.options[mood.selectedIndex].text
+    
+
 
     // checking to make sure all forms are filled out before posting to database
     if (date.value, concepts.value, entry.value, mood.value) { 
@@ -40,8 +43,6 @@ recButton.addEventListener("click", () => {
 })
 
 // ************************************************************************************************************************
-// ************************************************************************************************************************
-// ************************************************************************************************************************
-// WORKING ON THIS PART. MAX LENGTH OF 40 ADDED TO CONCEPTS PART, BUT THAT'S AS FAR AS I'VE GOTTEN.
-// Pick a maximum length for concepts field and provide visual feedback (e.g. alert box, or putting text in a blank div) if you type in a string that is longer than that maximum.
 // Test that the concept and entry fields contain no curse words. You can use regular expressions for that.
+// regex expression
+// empty div below concepts field and content field.
