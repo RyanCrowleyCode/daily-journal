@@ -5,10 +5,17 @@
     border-radius: 5px;
 }
 
-.red-text {
+.red-text-validator {
     color: red;
+    border: 2px solid red;
+    padding: 5px;
+    background-color: rgb(248, 245, 245);
+
 }
 
-.yellow-text {
-    color: yellow;
+.yellow-text-validator {
+    border: 2px solid rgba(255, 255, 0, 0.925);
+    padding: 5px;
+    background-color: rgb(248, 245, 245);
+
 }

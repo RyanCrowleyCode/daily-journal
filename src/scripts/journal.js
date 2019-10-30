@@ -1,6 +1,7 @@
 import API from "./data.js"
 import DomBuilder from "./entriesDOM.js"
 import NewJournal from "./journalObject.js"
+import VerifyText from "./verifyText.js"
 
 
 // Function for every time we need to get all of the journal entries and render them to the DOM
@@ -10,12 +11,12 @@ const getAndRender = () => {
 // Calling that function to get all of the journal entries and render them to the DOM
 getAndRender()
 
-
-
-
-
 // targeting the record button
 const recButton = document.querySelector("#recordButton")
+
+/// Verifying the character length for the concepts field
+VerifyText.watchCharacterLength(concepts)
+
 
 // adding an event listener for when the record button is clicked.
 recButton.addEventListener("click", () => {
@@ -28,7 +29,6 @@ recButton.addEventListener("click", () => {
     const moodText = mood.options[mood.selectedIndex].text
     
     const inputFieldArray = [date, concepts, entry, mood]
-
 
     // checking to make sure all forms are filled out before posting to database
     if (date.value, concepts.value, entry.value, mood.value) { 
@@ -43,6 +43,8 @@ recButton.addEventListener("click", () => {
                 inputField.value = ""
             })
         }
+    } else {
+        window.alert("Please fill out all forms for the journal before recording your entry.")
     }
 })
 

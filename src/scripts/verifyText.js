@@ -1,13 +1,24 @@
-// Pick a maximum length for concepts field and provide visual feedback (e.g. alert box, or putting text in a blank div) if you type in a string that is longer than that maximum.
-// Try creating an empty div below the concepts field
-// event listener, key-up
-// count characters in field
-// compare max characters to characters in field for "remaining characters"
-// use CSS to make the text in the remaining characters div yellow, then red, using javascript to change classes based on remaing characters
-// update DOM with each key-stroke
 
 const VerifyText = {
-    watchCharacterLength: function (inputField, maxCharacters, messageDiv) {
-
+    // Function that warns the user when they are running out of characters to type in a field
+    watchCharacterLength: function (inputField) {
+        const messageDiv = inputField.nextElementSibling
+        
+        inputField.addEventListener("keyup", function () {
+            const totalCharacters = inputField.value.length
+            const charRemaining = inputField.maxLength - totalCharacters
+            if (charRemaining <=5) {
+                messageDiv.innerHTML = `${charRemaining} characters remaining`
+                messageDiv.className = "red-text-validator"
+            } else if (charRemaining <= 10) {
+                messageDiv.innerHTML = `${charRemaining} characters remaining`
+                messageDiv.className = "yellow-text-validator"
+            } else {
+                messageDiv.innerHTML = ""
+                messageDiv.className = ""
+            }
+        } )
     }
 }
+
+export default VerifyText
