@@ -4,3 +4,18 @@
     border: 2px solid rgb(92, 128, 75);
     border-radius: 5px;
 }
+
+.red-text-validator {
+    color: red;
+    border: 2px solid red;
+    padding: 5px;
+    background-color: rgb(248, 245, 245);
+
+}
+
+.yellow-text-validator {
+    border: 2px solid rgba(255, 255, 0, 0.925);
+    padding: 5px;
+    background-color: rgb(248, 245, 245);
+
+}

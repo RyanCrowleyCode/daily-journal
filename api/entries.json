@@ -34,6 +34,13 @@
       "content": "Today, I worked on Journals 6 and 7. In seven, I had to do my first fetch call with \"POST\", and it was a little intimidating. This journal entry is my very first attempt to POST, and I hope it works!",
       "mood": "Hopeful",
       "id": 5
+    },
+    {
+      "date": "2019-10-30",
+      "title": "Steve Talk (POST and Abyss of Despair)",
+      "content": "Steve came in today and walked us through POST for the Journal 7 activity. He drew on the whiteboard to show how to modularize the code, and the signal flow from imports and function calls.",
+      "mood": "Happy",
+      "id": 6
     }
   ]
 }
