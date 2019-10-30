@@ -28,8 +28,14 @@ recButton.addEventListener("click", () => {
 
     // checking to make sure all forms are filled out before posting to database
     if (date.value, concepts.value, entry.value, mood.value) { 
-        const newestEntry = NewJournal.createJournalObject(date.value, concepts.value, entry.value, moodText)
-        API.saveJournalEntry(newestEntry)
+        // checking to make sure concepts field matches the required format
+        if (concepts.checkValidity()) {
+            // Posting to API
+            const newestEntry = NewJournal.createJournalObject(date.value, concepts.value, entry.value, moodText)
+            API.saveJournalEntry(newestEntry)
+        }   else {
+            console.log("NO!")
+        }
     }
 })
 
