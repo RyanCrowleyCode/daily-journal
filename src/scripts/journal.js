@@ -14,17 +14,19 @@ getAndRender()
 // targeting the record button
 const recButton = document.querySelector("#recordButton")
 
-/// Verifying the character length for the concepts field
+// targeting the input fields
+const date = document.querySelector("#journalDate")
+const concepts = document.querySelector("#concepts")
+const entry = document.querySelector("#journalEntry")
+const mood = document.querySelector("#mood")
+
+/// Verifying the character length for the concepts and entry fields
 VerifyText.watchCharacterLength(concepts)
+VerifyText.watchCharacterLength(entry)
 
 
 // adding an event listener for when the record button is clicked.
 recButton.addEventListener("click", () => {
-    // targeting the input fields
-    const date = document.querySelector("#journalDate")
-    const concepts = document.querySelector("#concepts")
-    const entry = document.querySelector("#journalEntry")
-    const mood = document.querySelector("#mood")
     // variable to get the actual text inside the mood, not just the value, like "Great!"
     const moodText = mood.options[mood.selectedIndex].text
     
