@@ -41,6 +41,13 @@
       "content": "Steve came in today and walked us through POST for the Journal 7 activity. He drew on the whiteboard to show how to modularize the code, and the signal flow from imports and function calls.",
       "mood": "Happy",
       "id": 6
+    },
+    {
+      "date": "2019-10-31",
+      "title": "Steve Talk (EDIT) and CSS with Julian",
+      "content": "Steve talked to us about the edit process. In CRUD (Create Read Update Delete), edit with be the \"U\" or update. You have to target something that exists, change it, and then use PUT to replace the old thing with the new thing. To EDIT, which is crud is UPDATE, you need to do a fetch call with PUT.\n\nAlso, I was stuck with some flex-box concepts for the Journal entry. I wanted my radio buttons for the mood-filter to display in a specific 3 column format. Julian helped me immensely. One issue I was running into was that Fieldset was my parent, and I think Fieldset makes a poor parent. For one thing, it has this child called Legend, and I think Legend's main job is to mess with the other children. We ended up putting divs around 3 sets of mood buttons, and wrapped all of those divs inside an article tag, so that the new parent was Article, and there were only 3 children. We also made each div a parent to 3 mood buttons. It worked! Remember to lean on your teammates.",
+      "mood": "Imposter Syndrome",
+      "id": 7
     }
   ]
 }

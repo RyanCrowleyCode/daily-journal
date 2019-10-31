@@ -11,42 +11,70 @@
 
 <body>
     <h1>Daily Journal</h1>
-    <form action="">
-        <fieldset>
-            <label for="journalDate">Date of Entry</label>
-            <input type="date" name="journalDate" id="journalDate" required>
-        </fieldset>
-        <fieldset>
-            <label for="concepts">Concepts Covered</label>
-            <!-- Pattern for the concepts box meets requirements outlined in the Journal 7 exercise. -->
-            <input type="text" name="concepts" id="concepts" pattern='[A-Za-z0-9\(\)\{\};:\s]*' title="No characters other than letters, numbers, (), {}, :, and ;" maxlength= "40" required />
-            <div id="concepts-message-div"></div>
-        </fieldset>
-        <fieldset>
-            <label for="journalEntry">Journal Entry</label>
-            <!-- Not adding a pattern for required characters. The user can use any character in the journalEntry box. -->
-            <textarea name="journalEntry" id="journalEntry" cols="50" rows="5" required></textarea>
-            <div id="journalEntry-message-div"></div>
-        </fieldset>
-        <fieldset>
-            <label for="mood">Mood For the Day</label>
-            <select name="mood" id="mood" required>
-                <option value=""></option>
-                <option value="great">Great!</option>
-                <option value="happy">Happy</option>
-                <option value="hopeful">Hopeful</option>
-                <option value="grateful">Grateful</option>
-                <option value="sad">Sad</option>
-                <option value="stressed">Stressed</option>
-                <option value="tired">Tired</option>
-                <option value="imposter">Imposter Syndrome</option>
-                <option value="help">Please help me!</option>
-            </select>
-        </fieldset>
-    </form>
-    <button type="button" id="recordButton">Record Journal Entry</button>
+    <div id="journal-form-wrapper">
+        <form action="">
+            <fieldset>
+                <label for="journalDate">Date of Entry</label>
+                <input type="date" name="journalDate" id="journalDate" required>
+            </fieldset>
+            <fieldset>
+                <label for="concepts">Concepts Covered</label>
+                <!-- Pattern for the concepts box meets requirements outlined in the Journal 7 exercise. -->
+                <input type="text" name="concepts" id="concepts" pattern='[A-Za-z0-9\(\)\{\};:,\s]*'
+                    title="No characters other than letters, numbers, (), {}, :, and ;" maxlength="40" required />
+                <div id="concepts-message-div"></div>
+            </fieldset>
+            <fieldset>
+                <label for="journalEntry">Journal Entry</label>
+                <!-- Not adding a pattern for required characters. The user can use any character in the journalEntry box. -->
+                <textarea name="journalEntry" id="journalEntry" maxlength="1000" required></textarea>
+                <div id="journalEntry-message-div"></div>
+            </fieldset>
+            <fieldset>
+                <label for="mood">Mood For the Day</label>
+                <select name="mood" id="mood" required>
+                    <option value=""></option>
+                    <option value="great">Great!</option>
+                    <option value="happy">Happy</option>
+                    <option value="hopeful">Hopeful</option>
+                    <option value="grateful">Grateful</option>
+                    <option value="sad">Sad</option>
+                    <option value="stressed">Stressed</option>
+                    <option value="tired">Tired</option>
+                    <option value="imposter">Imposter Syndrome</option>
+                    <option value="help">Please help me!</option>
+                </select>
+            </fieldset>
+        </form>
+        <div class="button-wrapper">
+            <button type="button" id="recordButton">Record Journal Entry</button>
+        </div>
+    </div>
+    <fieldset id="mood-filter">
+        <legend>Filter Journal Entries by Mood</legend>
+
+        <article id="radio-buttons">
+            <div class="radio-button-container">
+                
+                <label for="great"><input type="radio" id="great" name="mood" value="great"> Great!</label>
+                <label for="Happy"><input type="radio" id="Happy" name="mood" value="Happy"> Happy</label>
+                <label for="hopeful"><input type="radio" id="hopeful" name="mood" value="hopeful"> Hopeful</label>
+            </div>
+            <div class="radio-button-container">
+                <label for="grateful"><input type="radio" id="grateful" name="mood" value="grateful"> Grateful</label>
+                <label for="sad"><input type="radio" id="sad" name="mood" value="sad"> Sad</label>
+                <label for="stressed"><input type="radio" id="stressed" name="mood" value="stressed"> Stressed</label>
+            </div>
+            <div class="radio-button-container">
+                <label for="tired"><input type="radio" id="tired" name="mood" value="tired"> Tired</label>
+                <label for="imposter"><input type="radio" id="imposter" name="mood" value="imposter"> Imposter Syndrome</label>
+                <label for="help"><input type="radio" id="help" name="mood" value="help"> Please help me!</label>
+            </div>
+        </article>
+
+    </fieldset>
     <article class="entryLog">
-        
+
     </article>
 
 
