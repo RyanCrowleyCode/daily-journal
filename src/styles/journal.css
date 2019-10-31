@@ -1,8 +1,68 @@
+body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+button {
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: green;
+    color: white;
+    max-width: 100px;
+}
+
+form label {
+    display: block;
+    margin: 5px 0;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+}
+
+
+#journal-form-wrapper {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#journal-form-wrapper fieldset {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#journal-date {
+    display: none;
+}
+
+#mood-filter {
+    margin: 10px;
+}
+
+
+
 .journal-entry {
     margin: 25px;
     padding: 15px;
     border: 2px solid rgb(92, 128, 75);
     border-radius: 5px;
+}
+
+.journal-content {
+    text-align: left;
+    padding: 10px 0;
+}
+
+.journal-mood {
+    font-weight: bold;
 }
 
 .red-text-validator {
