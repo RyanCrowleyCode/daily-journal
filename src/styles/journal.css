@@ -1,6 +1,6 @@
 body {
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
@@ -43,11 +43,6 @@ textarea {
     display: none;
 }
 
-/* #mood-filter {
-    display: flex;
-    flex-direction: row;
-
-} */
 
 #radio-buttons {
     display: flex;

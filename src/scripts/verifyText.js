@@ -4,7 +4,7 @@ const VerifyText = {
     watchCharacterLength: function (inputField) {
         const messageDiv = inputField.nextElementSibling
         
-        inputField.addEventListener("keydown", function () {
+        inputField.addEventListener("keyup", function () {
             const totalCharacters = inputField.value.length
             const charRemaining = inputField.maxLength - totalCharacters
             if (inputField.maxLength <= 50) {
