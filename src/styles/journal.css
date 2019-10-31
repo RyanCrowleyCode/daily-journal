@@ -53,10 +53,12 @@ textarea {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
 }
 .radio-button-container {
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 
