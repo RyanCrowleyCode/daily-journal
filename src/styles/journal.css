@@ -1,6 +1,6 @@
 body {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     text-align: center;
 }
 
@@ -43,13 +43,20 @@ textarea {
     display: none;
 }
 
-#mood-filter {
-    margin: 10px;
-}
+/* #mood-filter {
+    display: flex;
+    flex-direction: row;
 
+} */
+
+#radio-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 .radio-button-container {
-    display: inline;
-    padding: 7px;
+    display: flex;
+    flex-direction: column;
 }
 
 
