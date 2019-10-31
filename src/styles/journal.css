@@ -47,6 +47,11 @@ textarea {
     margin: 10px;
 }
 
+.radio-button-container {
+    display: inline;
+    padding: 7px;
+}
+
 
 
 .journal-entry {
