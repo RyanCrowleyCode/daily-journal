@@ -7,6 +7,7 @@ const VerifyText = {
         inputField.addEventListener("keyup", function () {
             const totalCharacters = inputField.value.length
             const charRemaining = inputField.maxLength - totalCharacters
+            
             if (inputField.maxLength <= 50) {
                 if (charRemaining <=5) {
                     messageDiv.innerHTML = `${charRemaining} characters remaining`
@@ -30,6 +31,12 @@ const VerifyText = {
                     messageDiv.className = ""
                 }
             }
+            
+            // When the user is no longer using the inputField, the div notifying the user of remaining characters dissapears. 
+            inputField.addEventListener("blur", function () {
+                messageDiv.innerHTML = ""
+                messageDiv.className = ""
+            })
         } )
     },
     watchForProfanity: function (inputField) {
