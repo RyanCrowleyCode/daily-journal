@@ -25,6 +25,8 @@ VerifyText.watchCharacterLength(concepts)
 VerifyText.watchCharacterLength(entry)
 
 
+
+
 // adding an event listener for when the record button is clicked.
 recButton.addEventListener("click", () => {
     // variable to get the actual text inside the mood, not just the value, like "Great!"
@@ -40,10 +42,13 @@ recButton.addEventListener("click", () => {
             const newestEntry = NewJournal.createJournalObject(date.value, concepts.value, entry.value, moodText)
             API.saveJournalEntry(newestEntry)
                 .then(getAndRender)
+
             // for loop to clear inputFields
             inputFieldArray.forEach(inputField => {
                 inputField.value = ""
             })
+        } else {
+            window.alert("NOT A GOOD PATTERN.")
         }
     } else {
         window.alert("Please fill out all forms for the journal before recording your entry.")
