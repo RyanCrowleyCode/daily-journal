@@ -46,11 +46,27 @@ const Events = {
     },
 
     listenToMoodButtons: function () {
+        // targeting all mood radio buttons
         const moodButtons = document.getElementsByName("mood-radio-button")
+
+        // iterating through array of moodButtons to add event listener to each one
         moodButtons.forEach( moodButton => {
             moodButton.addEventListener("click", () => {
+                // targeting the specific mood selected
                 const selectedMood = event.target.value
-                console.log(selectedMood)
+
+                // fetch call to API to get all entries
+                API.getEntries()
+                    .then(response => {
+                        // filtering to only the selected moods
+                        const selectedMoodArray = response.filter(journalEntry => {
+                            return journalEntry.mood === selectedMood
+                        })
+                        
+                        //display filtered mood to the DOM
+                        DomBuilder.renderJournalEntries(selectedMoodArray)
+                        
+                    })
             })
         })
 
