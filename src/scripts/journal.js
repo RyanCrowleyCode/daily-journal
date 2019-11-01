@@ -11,8 +11,6 @@ const getAndRender = () => {
 // Calling that function to get all of the journal entries and render them to the DOM
 getAndRender()
 
-// targeting the record button
-const recButton = document.querySelector("#recordButton")
 
 // targeting the input fields
 const date = document.querySelector("#journalDate")
@@ -25,7 +23,8 @@ VerifyText.watchCharacterLength(concepts)
 VerifyText.watchCharacterLength(entry)
 
 // Listening to RecordButton
-Events.listenToRecordButtonClick(recButton, date, concepts, entry, mood)
+Events.listenToRecordButtonClick(date, concepts, entry, mood)
+Events.listenToMoodButtons()
 
 
 
