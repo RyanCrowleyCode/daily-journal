@@ -57,7 +57,7 @@
       "id": 8
     },
     {
-      "date": "",
+      "date": "2019-11-01",
       "title": "Modularization for events and using functions",
       "content": "It took me a while, but I removed my record button event listener from my main js file and put it inside of an object in an event manager js file. Then, turned it into a general function that wasn't actually an event listener, but only the function that an event listener would run when an event happens. I created two event listeners to call that function, one for \"click\" and one for pressing the \"enter\" key. It works!",
       "mood": "Great!",
@@ -69,6 +69,13 @@
       "content": "So my last journal entry about creating 2 event handlers for the record button (one for click, and one for enter) wasn't as good as I thought. Every time I used Enter, it would first do a click event, and then try and do it again as an enter keyup (I had a conditional if (event.keycode === 13). Working with Kristen, we eventually realized that in JavaScript, pressing enter somehow automatically triggers a click event. We aren't sure why yet.",
       "mood": "Impostor Syndrome",
       "id": 10
+    },
+    {
+      "date": "2019-11-01",
+      "title": "Journal 8 (Mood Filtering)",
+      "content": "This one was challenging. I had to create the HTML for the mood buttons, flexbox them in CSS, filter them in JavaScript, add eventListeners to each one, filter the entries from the API, and render to the DOM the filtered options. I went down so many rabbit holes, and I learned a lot in the process. I'm glad I had a lab day today, I needed the freedom to try things.",
+      "mood": "Grateful",
+      "id": 11
     }
   ]
 }
