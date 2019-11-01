@@ -19,7 +19,7 @@
       "date": "10/18/2019",
       "title": "API",
       "content": "API's allow us to access large amounts of data. I believe JSON is a language/data structure that looks a lot like JavaScript, and it stands for \"JavaScript Object Notation\". We use fetch to access the JSON data in an API, and we convert that into JavaScript. It's still really confusing to me how, and what all I can do with this, but I do know that it will allow us to access the world of information provided on the internet in some incredible ways.",
-      "mood": "Imposter Syndrome"
+      "mood": "Impostor Syndrome"
     },
     {
       "id": 4,
@@ -46,8 +46,29 @@
       "date": "2019-10-31",
       "title": "Steve Talk (EDIT) and CSS with Julian",
       "content": "Steve talked to us about the edit process. In CRUD (Create Read Update Delete), edit with be the \"U\" or update. You have to target something that exists, change it, and then use PUT to replace the old thing with the new thing. To EDIT, which is crud is UPDATE, you need to do a fetch call with PUT.\n\nAlso, I was stuck with some flex-box concepts for the Journal entry. I wanted my radio buttons for the mood-filter to display in a specific 3 column format. Julian helped me immensely. One issue I was running into was that Fieldset was my parent, and I think Fieldset makes a poor parent. For one thing, it has this child called Legend, and I think Legend's main job is to mess with the other children. We ended up putting divs around 3 sets of mood buttons, and wrapped all of those divs inside an article tag, so that the new parent was Article, and there were only 3 children. We also made each div a parent to 3 mood buttons. It worked! Remember to lean on your teammates.",
-      "mood": "Imposter Syndrome",
+      "mood": "Impostor Syndrome",
       "id": 7
+    },
+    {
+      "date": "2019-11-01",
+      "title": "November and Character Length feature",
+      "content": "On Daily Journal 7 and 8, I went down a rabbit hole to get a twitter-like character length warning to appear in the \"Concepts Covered\" and \"Journal Entry\" fields. The real trick I found was trying to get the warning to only be visible when the user was inside the appropriate text-box. The solution was to add an event listener inside my other event listener that checked for a \"blur\" event. When the box is selected, it is a \"Focus\" event, but a \"Blur\" event happens when a box loses focus.",
+      "mood": "Tired",
+      "id": 8
+    },
+    {
+      "date": "",
+      "title": "Modularization for events and using functions",
+      "content": "It took me a while, but I removed my record button event listener from my main js file and put it inside of an object in an event manager js file. Then, turned it into a general function that wasn't actually an event listener, but only the function that an event listener would run when an event happens. I created two event listeners to call that function, one for \"click\" and one for pressing the \"enter\" key. It works!",
+      "mood": "Great!",
+      "id": 9
+    },
+    {
+      "date": "2019-11-01",
+      "title": "In JavaScript, pressing Enter is a Click Event",
+      "content": "So my last journal entry about creating 2 event handlers for the record button (one for click, and one for enter) wasn't as good as I thought. Every time I used Enter, it would first do a click event, and then try and do it again as an enter keyup (I had a conditional if (event.keycode === 13). Working with Kristen, we eventually realized that in JavaScript, pressing enter somehow automatically triggers a click event. We aren't sure why yet.",
+      "mood": "Impostor Syndrome",
+      "id": 10
     }
   ]
 }
