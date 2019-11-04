@@ -1,5 +1,6 @@
 import JournalEntryComponent from "./entryComponent.js"
 
+
 // a reference to the article tag that will contain my journal entries on the DOM
 const domJournalContainer = document.querySelector(".entryLog")
 
@@ -11,7 +12,11 @@ const DomBuilder = {
         const addEntry = JournalEntryComponent.makeJournalEntryComponent(entry)
         domJournalContainer.innerHTML += addEntry
     }
-    )}
+    )},
+    renderForm: (form) => {
+        const formWrapper = document.querySelector("#journal-form-wrapper")
+        formWrapper.innerHTML = form
+    }
 }
 
 export default DomBuilder

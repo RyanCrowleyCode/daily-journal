@@ -2,6 +2,10 @@ import API from "./data.js"
 import DomBuilder from "./entriesDOM.js"
 import VerifyText from "./verifyText.js"
 import Events from "./eventManager.js"
+import journalForm from "./form.js"
+
+//render form to the dom
+DomBuilder.renderForm(journalForm)
 
 
 // Function for every time we need to get all of the journal entries and render them to the DOM

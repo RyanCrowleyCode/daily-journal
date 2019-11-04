@@ -76,6 +76,13 @@
       "content": "This one was challenging. I had to create the HTML for the mood buttons, flexbox them in CSS, filter them in JavaScript, add eventListeners to each one, filter the entries from the API, and render to the DOM the filtered options. I went down so many rabbit holes, and I learned a lot in the process. I'm glad I had a lab day today, I needed the freedom to try things.",
       "mood": "Grateful",
       "id": 11
+    },
+    {
+      "date": "2019-11-04",
+      "title": "Webpack",
+      "content": "Today, we discussed Webpack. From what I understand, Webpack will run a server, and run json-server, and does other things for us like eslinting, converting ES6 to ES5 for browser compatibility, that sort of thing. We aren't diving too far into the weeds on how it works, but we will be using the tool. The instructors say that React will use webpack behind the scenes for us, so I guess we need to understand the concept of what it's doing for us.",
+      "mood": "Stressed",
+      "id": 12
     }
   ]
 }
