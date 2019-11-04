@@ -3,8 +3,8 @@ import API from "./data.js"
 import DomBuilder from "./entriesDOM.js"
 
 // Function for every time we need to get all of the journal entries and render them to the DOM
-const getAndRender = () => {
-    API.getEntries().then(entries => DomBuilder.renderJournalEntries(entries))
+const getRenderAndListen = () => {
+    API.getEntries().then(entries => DomBuilder.renderJournalEntries(entries)).then(Events.listenToDeleteButtons)
 }
 
 const Events = {
@@ -21,7 +21,7 @@ const Events = {
                 // Posting to API
                 const newestEntry = NewJournal.createJournalObject(date.value, concepts.value, entry.value, moodText)
                 API.saveJournalEntry(newestEntry)
-                .then(getAndRender)
+                .then(getRenderAndListen)
                 
                 // for loop to clear inputFields
                 inputFieldArray.forEach(inputField => {
@@ -76,6 +76,20 @@ const Events = {
             })
         })
 
+    },
+
+    listenToDeleteButtons: function () {
+        const allDeleteButtons = document.querySelectorAll(".deleteButton")
+        
+        allDeleteButtons.forEach(deleteButton => {
+            deleteButton.addEventListener("click", () => {
+                const buttonId = deleteButton.id.split("--")[1]
+                // fetch call to delete
+                API.deleteOneEntry(buttonId)
+                    .then(getRenderAndListen)
+                    
+            })
+        })
     }
 }
 

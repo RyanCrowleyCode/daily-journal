@@ -83,6 +83,13 @@
       "content": "Today, we discussed Webpack. From what I understand, Webpack will run a server, and run json-server, and does other things for us like eslinting, converting ES6 to ES5 for browser compatibility, that sort of thing. We aren't diving too far into the weeds on how it works, but we will be using the tool. The instructors say that React will use webpack behind the scenes for us, so I guess we need to understand the concept of what it's doing for us.",
       "mood": "Stressed",
       "id": 12
+    },
+    {
+      "date": "2019-11-04",
+      "title": "Delete Functionality",
+      "content": "Today, I worked on the delete functionality. I got tripped up in a few places. One, I had to call my deleteButton event listener after my fetch call, as my fetch call must be complete before there are delete buttons on the DOM. Second, because of the first reason, I had to make sure to re-call the event listener every time the Dom was rendered. Also, .then() statements take function DEFINITIONS, not function calls. Now that I've done those things... delete works!",
+      "mood": "Happy",
+      "id": 13
     }
   ]
 }

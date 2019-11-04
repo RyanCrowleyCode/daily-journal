@@ -9,7 +9,7 @@ const journalForm = `
             <fieldset>
                 <label for="concepts">Concepts Covered</label>
                 <!-- Pattern for the concepts box meets requirements outlined in the Journal 7 exercise. -->
-                <input type="text" name="concepts" id="concepts" pattern='[A-Za-z0-9\(\)\{\};:,\s]*'
+                <input type="text" name="concepts" id="concepts" pattern="[A-Za-z0-9\\(\\)\\{\\};:,\\s]*"
                     title="No characters other than letters, numbers, commas, (), {}, :, and ; in the Concepts Covered field." maxlength="50" required />
                 <div id="concepts-message-div"></div>
             </fieldset>
