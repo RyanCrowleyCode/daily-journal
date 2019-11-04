@@ -32,7 +32,6 @@ const journalForm = `
                     <option value="stressed">Stressed</option>
                     <option value="tired">Tired</option>
                     <option value="impostor">Impostor Syndrome</option>
-                    <option value="help">Please help me!</option>
                 </select>
             </fieldset>
         </form>
