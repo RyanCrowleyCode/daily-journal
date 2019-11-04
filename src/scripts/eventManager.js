@@ -59,12 +59,18 @@ const Events = {
                 API.getEntries()
                     .then(response => {
                         // filtering to only the selected moods
-                        const selectedMoodArray = response.filter(journalEntry => {
-                            return journalEntry.mood === selectedMood
-                        })
+                        if (selectedMood === "all") {
+                            // if all selected, return all entries from response
+                            DomBuilder.renderJournalEntries(response)
+                        } else {
+                            const selectedMoodArray = response.filter(journalEntry => {
+                                return journalEntry.mood === selectedMood
+                            })
+
+                            //display filtered mood to the DOM
+                            DomBuilder.renderJournalEntries(selectedMoodArray)
+                        }
                         
-                        //display filtered mood to the DOM
-                        DomBuilder.renderJournalEntries(selectedMoodArray)
                         
                     })
             })
