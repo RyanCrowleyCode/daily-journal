@@ -8,12 +8,10 @@ import journalForm from "./form.js"
 DomBuilder.renderForm(journalForm)
 
 
-// Function for every time we need to get all of the journal entries and render them to the DOM
-const getAndRender = () => {
-    API.getEntries().then(entries => DomBuilder.renderJournalEntries(entries))
-}
-// Calling that function to get all of the journal entries and render them to the DOM
-getAndRender()
+// Get, Render, Listen to Delete buttons rendered
+API.getEntries()
+.then(entries => DomBuilder.renderJournalEntries(entries))
+.then(Events.listenToDeleteButtons)
 
 
 // targeting the input fields
@@ -26,9 +24,13 @@ const mood = document.querySelector("#mood")
 VerifyText.watchCharacterLength(concepts)
 VerifyText.watchCharacterLength(entry)
 
-// Listening to RecordButton
+
+
+// Listening to Buttons
+
 Events.listenToRecordButtonClick(date, concepts, entry, mood)
 Events.listenToMoodButtons()
+
 
 
 

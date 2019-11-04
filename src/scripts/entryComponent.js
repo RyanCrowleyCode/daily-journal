@@ -7,6 +7,7 @@ const JournalEntryComponent = {
             <div class="journal-date">${journalEntry.date}</div>
             <p class="journal-content">${journalEntry.content}</p>
             <div class="journal-mood">Current mood: ${journalEntry.mood}</div>
+            <button id="deleteButton--${journalEntry.id}" class="deleteButton">Delete Entry</button>
         </section>
 
     `
