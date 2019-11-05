@@ -1,4 +1,3 @@
-
 const VerifyText = {
     // Function that warns the user when they are running out of characters to type in a field
     watchCharacterLength: function (inputField) {
@@ -39,12 +38,12 @@ const VerifyText = {
             })
         } )
     },
-    watchForProfanity: function (inputField) {
-        // Test that the concept and entry fields contain no curse words. You can use regular expressions for that.
-        // regex expression
-        // empty div below concepts field and content field.
+    // watchForProfanity: function (inputField) {
+    //     // Test that the concept and entry fields contain no curse words. You can use regular expressions for that.
+    //     // regex expression
+    //     // empty div below concepts field and content field.
 
-    }
+    // }
 }
 
 export default VerifyText
