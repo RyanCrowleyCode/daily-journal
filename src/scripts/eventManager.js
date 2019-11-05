@@ -4,7 +4,10 @@ import DomBuilder from "./entriesDOM.js"
 
 // Function for every time we need to get all of the journal entries and render them to the DOM
 const getRenderAndListen = () => {
-    API.getEntries().then(entries => DomBuilder.renderJournalEntries(entries)).then(Events.listenToDeleteButtons)
+    API.getEntries()
+        .then(entries => DomBuilder.renderJournalEntries(entries))
+        .then(Events.listenToDeleteButtons)
+        .then(Events.listenToEditButtons)
 }
 
 const Events = {
@@ -90,7 +93,19 @@ const Events = {
                     
             })
         })
+    },
+
+    listenToEditButtons: function () {
+        const allEditButtons = document.querySelectorAll(".editButton")
+
+        allEditButtons.forEach(editButton => {
+            editButton.addEventListener("click", () => {
+                const buttonId = editButton.id.split("--")[1]
+                // When clicked, get the individual entry and populate the form fields with text content.
+            })
+        })
     }
+    
 }
 
 export default Events

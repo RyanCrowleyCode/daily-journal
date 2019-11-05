@@ -12,6 +12,7 @@ DomBuilder.renderForm(journalForm)
 API.getEntries()
 .then(entries => DomBuilder.renderJournalEntries(entries))
 .then(Events.listenToDeleteButtons)
+.then(Events.listenToEditButtons)
 
 
 // targeting the input fields
