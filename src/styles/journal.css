@@ -18,28 +18,46 @@ body {
 }
 
 
-.deleteButton {
+.deleteButton,
+.editButton {
     padding: 7px;
     border: 1px solid black;
     border-radius: 5px;
     margin: 10px;
     background-color: white;
     color: black;
-    max-width: 100px;
+    width: 100px;
+    height: 50px;
     transition: .2s;
 }
 
 .deleteButton:hover,
 .deleteButton:focus {
     font-weight: bold;
-    padding: 8px;
+    padding: 7px;
     border: 1px solid black;
     border-radius: 5px;
     margin: 10px;
     background-color:   red;
     color: white;
-    max-width: 100px;
+    width: 100px;
+    height: 50px;
 }
+
+.editButton:hover,
+.editButton:focus {
+    font-weight: bold;
+    padding: 7px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    background-color:   orange;
+    color: white;
+    width: 100px;
+    height: 50px;
+}
+
+
 
 form label {
     display: block;

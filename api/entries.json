@@ -90,6 +90,13 @@
       "content": "Today, I worked on the delete functionality. I got tripped up in a few places. One, I had to call my deleteButton event listener after my fetch call, as my fetch call must be complete before there are delete buttons on the DOM. Second, because of the first reason, I had to make sure to re-call the event listener every time the Dom was rendered. Also, .then() statements take function DEFINITIONS, not function calls. Now that I've done those things... delete works!",
       "mood": "Happy",
       "id": 13
+    },
+    {
+      "date": "2019-11-05",
+      "title": "ERDs",
+      "content": "Today we talked about ERD's, or \"Entity Relationship Diagrams\". These diagrams are used to plan data structures. The relationships can be \"One to One,\" \"One to Many,\" and \"Many to Many.\" With Many to Many relationships, an additional entity (or table?) is added that functions as the \"Intersection\" table.",
+      "mood": "Stressed",
+      "id": 14
     }
   ]
 }
