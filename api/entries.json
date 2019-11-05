@@ -97,6 +97,13 @@
       "content": "Today we talked about ERD's, or \"Entity Relationship Diagrams\". These diagrams are used to plan data structures. The relationships can be \"One to One,\" \"One to Many,\" and \"Many to Many.\" With Many to Many relationships, an additional entity (or table?) is added that functions as the \"Intersection\" table.",
       "mood": "Stressed",
       "id": 14
+    },
+    {
+      "date": "2019-11-05",
+      "title": "Edit (PUT)",
+      "content": "Today was rough. I worked on the Edit part of the daily journal and it just about broke me. The hiccup was making sure that the page refreshed correctly, without losing event listeners, functionality, or my character validator. I eventually created a function that looped through all of my event listeners and called them. I made a function called getRenderListenWatch that would get all entries, then Render all my render-things, then call all of my event listeners, then watch for character validation. It was really cool when it worked, but I'm fried. I've learned a lot today. I need to walk away and process, come in fresh tomorrow.",
+      "mood": "Sad",
+      "id": 15
     }
   ]
 }
