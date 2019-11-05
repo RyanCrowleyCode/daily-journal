@@ -102,6 +102,17 @@ const Events = {
             editButton.addEventListener("click", () => {
                 const buttonId = editButton.id.split("--")[1]
                 // When clicked, get the individual entry and populate the form fields with text content.
+                API.getSingleEntry(buttonId)
+                    .then(response => {
+                        // populate the form with the values from the entry we are editing
+                        document.getElementById("journalDate").value = response.date
+                        document.getElementById("concepts").value = response.title
+                        document.getElementById("journalEntry").value = response.content
+                        document.getElementById("mood").value = response.mood
+                        // scroll back to the top where the form is located
+                        document.documentElement.scrollTop = 0;
+                        
+                    })
             })
         })
     }

@@ -24,14 +24,14 @@ const journalForm = `
                 <label for="mood">Mood For the Day</label>
                 <select name="mood" id="mood" required>
                     <option value=""></option>
-                    <option value="great">Great!</option>
-                    <option value="happy">Happy</option>
-                    <option value="hopeful">Hopeful</option>
-                    <option value="grateful">Grateful</option>
-                    <option value="sad">Sad</option>
-                    <option value="stressed">Stressed</option>
-                    <option value="tired">Tired</option>
-                    <option value="impostor">Impostor Syndrome</option>
+                    <option value="Great!">Great!</option>
+                    <option value="Happy">Happy</option>
+                    <option value="Hopeful">Hopeful</option>
+                    <option value="Grateful">Grateful</option>
+                    <option value="Sad">Sad</option>
+                    <option value="Stressed">Stressed</option>
+                    <option value="Tired">Tired</option>
+                    <option value="Impostor Syndrome">Impostor Syndrome</option>
                 </select>
             </fieldset>
         </form>
