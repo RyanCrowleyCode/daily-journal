@@ -26,6 +26,16 @@ const API = {
     getSingleEntry: function (entryId) {
         return fetch(`http://localhost:3000/entries/${entryId}`) // gets the json for 1 entry
         .then(response => response.json()) // turns the json into javascript object 
+    },
+
+    updateSingleEntry: function(journalEntryObject, id) {
+        return fetch(`http://localhost:3000/entries/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(journalEntryObject)
+    }).then(response => response.json())
     }
 }
 

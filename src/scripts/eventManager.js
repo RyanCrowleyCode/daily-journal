@@ -1,50 +1,60 @@
 import NewJournal from "./journalObject.js"
 import API from "./data.js"
 import DomBuilder from "./entriesDOM.js"
+import journalForm from "./form.js"
 
 // Function for every time we need to get all of the journal entries and render them to the DOM
 const getRenderAndListen = () => {
     API.getEntries()
         .then(entries => DomBuilder.renderJournalEntries(entries))
+        .then(DomBuilder.renderForm(journalForm))
+        .then(Events.listenToRecordButtonClick)
         .then(Events.listenToDeleteButtons)
         .then(Events.listenToEditButtons)
+        
 }
 
 const Events = {
-    recordEntry: function (date, concepts, entry, mood) {
-        // variable to get the actual text inside the mood, not just the value, like "Great!"
-        const moodText = mood.options[mood.selectedIndex].text
-        
-        const inputFieldArray = [date, concepts, entry, mood]
-        
-        // checking to make sure all forms are filled out before posting to database
-        if (date.value, concepts.value, entry.value, mood.value) { 
-            // checking to make sure concepts field matches the required format
-            if (concepts.checkValidity()) {
-                // Posting to API
-                const newestEntry = NewJournal.createJournalObject(date.value, concepts.value, entry.value, moodText)
-                API.saveJournalEntry(newestEntry)
-                .then(getRenderAndListen)
-                
-                // for loop to clear inputFields
-                inputFieldArray.forEach(inputField => {
-                    inputField.value = ""
-                })
-                
-            } else {
-                window.alert(concepts.title)
-            }
-        } else {
-            window.alert("Please fill out all forms for the journal before recording your entry.")
-        }
-    },
-
-    listenToRecordButtonClick: function (date, concepts, entry, mood) {
+    
+    listenToRecordButtonClick: function () {
         // targeting the record button
         const recButton = document.querySelector("#recordButton")
-
+        
         recButton.addEventListener("click", () => {
-            this.recordEntry(date, concepts, entry, mood)
+            // targeting the input fields
+            const date = document.querySelector("#journalDate")
+            const concepts = document.querySelector("#concepts")
+            const entry = document.querySelector("#journalEntry")
+            const mood = document.querySelector("#mood")
+            // variable to get the actual text inside the mood, not just the value, like "Great!"
+            const moodText = mood.options[mood.selectedIndex].text
+            
+            const inputFieldArray = [date, concepts, entry, mood]
+            
+            // checking to make sure all forms are filled out before posting to database
+            if (date.value, concepts.value, entry.value, mood.value) { 
+                // checking to make sure concepts field matches the required format
+                if (concepts.checkValidity()) {
+                    const newestEntry = NewJournal.createJournalObject(date.value, concepts.value, entry.value, moodText)
+                    const entryId = document.getElementById("entryId")
+                    if (entryId.value) {
+                        // Updating entry in API (PUT)
+                        API.updateSingleEntry(newestEntry, entryId.value)
+                            .then(getRenderAndListen)  
+        
+                    } else {
+                        // Posting to API
+                        API.saveJournalEntry(newestEntry)
+                            .then(getRenderAndListen)
+                    }
+                    
+                } else {
+                    window.alert(concepts.title)
+                }
+            } else {
+                window.alert("Please fill out all forms for the journal before recording your entry.")
+            }
+            
         })
     },
 
@@ -103,12 +113,14 @@ const Events = {
                 const buttonId = editButton.id.split("--")[1]
                 // When clicked, get the individual entry and populate the form fields with text content.
                 API.getSingleEntry(buttonId)
-                    .then(response => {
+                    .then(selectedEntry => {
                         // populate the form with the values from the entry we are editing
-                        document.getElementById("journalDate").value = response.date
-                        document.getElementById("concepts").value = response.title
-                        document.getElementById("journalEntry").value = response.content
-                        document.getElementById("mood").value = response.mood
+                        document.getElementById("journalDate").value = selectedEntry.date
+                        document.getElementById("concepts").value = selectedEntry.title
+                        document.getElementById("journalEntry").value = selectedEntry.content
+                        document.getElementById("mood").value = selectedEntry.mood
+                        // update the hidden input
+                        document.getElementById("entryId").value = selectedEntry.id
                         // scroll back to the top where the form is located
                         document.documentElement.scrollTop = 0;
                         
