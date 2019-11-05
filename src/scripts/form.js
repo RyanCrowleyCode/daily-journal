@@ -2,6 +2,7 @@
 
 const journalForm = `
         <form action="">
+            <input type="hidden" id="entryId" value="" />
             <fieldset>
                 <label for="journalDate">Date of Entry</label>
                 <input type="date" name="journalDate" id="journalDate" required>
