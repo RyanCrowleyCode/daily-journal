@@ -104,6 +104,13 @@
       "content": "Today was rough. I worked on the Edit part of the daily journal and it just about broke me. The hiccup was making sure that the page refreshed correctly, without losing event listeners, functionality, or my character validator. I eventually created a function that looped through all of my event listeners and called them. I made a function called getRenderListenWatch that would get all entries, then Render all my render-things, then call all of my event listeners, then watch for character validation. It was really cool when it worked, but I'm fried. I've learned a lot today. I need to walk away and process, come in fresh tomorrow.",
       "mood": "Sad",
       "id": 15
+    },
+    {
+      "date": "2019-11-06",
+      "title": "Advanced Objects (search exercise)",
+      "content": "I completed the Advanced Objects exercise that iterated through an object to print to the DOM, and allowed a user to search for any value that would be associated with a sales agent (like name, phone number, email). If the value being searched for was found inside the object, that sales agent was rendered to the DOM. I'm feeling behind, but I can at least cross this exercise off of my list! Performing this exercise will give me the tools to begin Journal 11.",
+      "mood": "Hopeful",
+      "id": 16
     }
   ]
 }
