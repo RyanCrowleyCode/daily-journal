@@ -111,6 +111,13 @@
       "content": "I completed the Advanced Objects exercise that iterated through an object to print to the DOM, and allowed a user to search for any value that would be associated with a sales agent (like name, phone number, email). If the value being searched for was found inside the object, that sales agent was rendered to the DOM. I'm feeling behind, but I can at least cross this exercise off of my list! Performing this exercise will give me the tools to begin Journal 11.",
       "mood": "Hopeful",
       "id": 16
+    },
+    {
+      "date": "2019-11-11",
+      "title": "Cascading Deletes with JSON server",
+      "content": "Today, we ran into an issue where we could not delete a single item in the JSON server database. We were targeting correctly, but no matter what we did the entire database was deleted.\n\nThis is because in the item we were trying to delete, there was a key \"userId\" with a value of 1, but in the \"users\" table there was no id of 1, since there were no users yet.\n\nJSON server knows that when you have \"users\" and \"userId\" that userId is a foreign key for an entity named users. when there is an empty entity, a cascading delete happens and everything goes bye-bye. I think it's both really cool and really terrifying that JSON server knows to drop the \"s\" and add \"Id\" in the naming convention and connect FK's to the entity where they are connected.",
+      "mood": "Great!",
+      "id": 17
     }
   ]
 }
